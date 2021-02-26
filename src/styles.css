@@ -1,29 +1,57 @@
-.timer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: #212121;
-  border-radius: 2px;
+li {
+    list-style: none;
+}
+.flag-ukr-item-elem1 {
+    display: block;
+    width: 300px;
+    height: 75px;
+    background-color: rgb(255, 251, 0);
 }
 
-.value {
-  margin-bottom: 15px;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 80px;
-  margin-top: 0;
-  margin-bottom: 24px;
+.flag-ukr-item-elem2 {
+    display: block;
+    width: 300px;
+    height: 75px;
+    background-color: blue;
 }
 
-.timer .label {
-  display: grid;
-  font-size: 25px;
+/* Japan */
+.flag-list-item-wrapper {
+    position: relative;
 }
 
-h2 {
-  text-align: center;
-  font-size: 40px;
+.flag-jap-item-elem1 {
+    display: block;
+    width: 300px;
+    height: 150px;
+    background-color: white;
 }
 
-.field {
-  margin-right: 30px;
+.flag-jap-item-elem2 {
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    top: 0;
+    transform: translate(92%, 27%);
+}
+
+/* IceLand */
+
+.flag-ice-item-elem1 {
+    display: block;
+    width: 300px;
+    height: 150px;
+    background-color: rgb(25, 0, 255);
+}
+
+.flag-ice-item-elem2 {
+    display: block;
+    width: 300px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 57px;
 }
