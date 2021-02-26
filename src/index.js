@@ -1,4 +1,4 @@
-import '../src/styles.css';
+import '../src/sass/main.scss';
 
 // const refs = {
 //   spanDays: document.querySelector('[data-value="days"]'),
