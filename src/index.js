@@ -1,4 +1,8 @@
-import '../src/sass/main.scss';
+import './sass/main.scss';
+import '../src/task-1/sass/main.scss';
+import './task-1/js/task-1.js';
+// import './task-2/js/task-2.js';
+import './task-2/sass/main.scss';
 
 // const refs = {
 //   spanDays: document.querySelector('[data-value="days"]'),
