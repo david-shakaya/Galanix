@@ -1,116 +1,121 @@
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .flag-list {
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flag-ukr-item-elem1 {
-    display: block;
-    width: 300px;
-    height: 75px;
-    background-color: rgb(255, 251, 0);
+  display: block;
+  width: 300px;
+  height: 75px;
+  background-color: rgb(255, 251, 0);
 }
 
 .flag-ukr-item-elem2 {
-    display: block;
-    width: 300px;
-    height: 75px;
-    background-color: blue;
+  display: block;
+  width: 300px;
+  height: 75px;
+  background-color: blue;
 }
 
 /* Japan */
 .flag-list-item-wrapper {
-    position: relative;
+  position: relative;
+  outline: 1px black solid;
 }
 
 .flag-jap-item-elem1 {
-    display: block;
-    width: 300px;
-    height: 150px;
-    background-color: white;
+  display: block;
+  width: 300px;
+  height: 150px;
+  background-color: white;
 }
 
 .flag-jap-item-elem2 {
-    position: absolute;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-    top: 0;
-    transform: translate(92%, 27%);
+  position: absolute;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  top: 0;
+  transform: translate(92%, 27%);
 }
 
 /* IceLand */
 
 .flag-ice-item-elem1 {
-    display: block;
-    width: 300px;
-    height: 150px;
-    background-color: rgb(25, 0, 255);
+  display: block;
+  width: 300px;
+  height: 150px;
+  background-color: rgb(25, 0, 255);
 }
 
 .flag-ice-item-elem2 {
-    position: absolute;
-    top: 57px;
-    display: block;
-    width: 300px;
-    height: 40px;
-    background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 57px;
+  display: block;
+  width: 300px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
 }
 
 .flag-ice-item-elem3 {
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 150px;
-    top: 0px;
-    left: 66px;
-    background-color: rgb(255, 255, 255);
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 150px;
+  top: 0px;
+  left: 66px;
+  background-color: rgb(255, 255, 255);
 }
 
 .flag-ice-item-elem4 {
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 150px;
-    top: 0px;
-    left: 76px;
-    background-color: rgb(255, 0, 0);
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 150px;
+  top: 0px;
+  left: 76px;
+  background-color: rgb(255, 0, 0);
 }
 .flag-ice-item-elem5 {
-    position: absolute;
-    display: block;
-    width: 300px;
-    height: 20px;
-    top: 66px;
-    left: 0;
-    background-color: rgb(255, 0, 0);
+  position: absolute;
+  display: block;
+  width: 300px;
+  height: 20px;
+  top: 66px;
+  left: 0;
+  background-color: rgb(255, 0, 0);
 }
 
 /* cze */
 
 .flag-cze-item-elem1 {
-    display: block;
-    width: 300px;
-    height: 75px;
-    background-color: rgb(255, 255, 255);
+  display: block;
+  width: 300px;
+  height: 75px;
+  background-color: rgb(255, 255, 255);
 }
 .flag-cze-item-elem2 {
-    display: block;
-    width: 300px;
-    height: 75px;
-    background-color: rgb(211, 0, 0);
+  display: block;
+  width: 300px;
+  height: 75px;
+  background-color: rgb(211, 0, 0);
 }
 
 .flag-cze-item-elem3 {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    border: 76px solid transparent;
-    border-left: 118px solid #001bd8;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  border: 76px solid transparent;
+  border-left: 118px solid #001bd8;
+}
+
+.flag-list-item:not(:last-child) {
+  margin-bottom: 50px;
 }
