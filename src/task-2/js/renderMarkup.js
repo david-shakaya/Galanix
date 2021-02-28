@@ -1,8 +1,12 @@
 import modal from './moda.js';
 import refs from './refs';
 
+let quantityImg = 0;
+let q = `Количество изображений ${quantityImg}`;
+
 function renderMarkup() {
     refs.wrapperContent.innerHTML = `<div class="container">
+
             <ul class="list-img">
                 <li class="list-item-img">
                     <div class="img-background-1 img-background" id="1"></div>
@@ -56,6 +60,9 @@ function renderMarkup() {
             </ul>
         </div> `;
 
+    refs.wrapperContentCountImg.innerHTML = `<h2>Количество ${
+        refs.quantityImg().length
+    }</h2>`;
     const listImg = document.querySelector('.list-img');
     listImg.addEventListener('click', showImgFullScreen);
 }
