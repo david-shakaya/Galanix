@@ -1,91 +1,144 @@
 import refs from './refs';
-import modal from './moda.js';
-import curentDate from './curentTime';
+import data from './data';
+// import returnsImgOnClick from './returnsImgOnClick';
+
+import renderDateMarkup from './curentTime';
+import showImgFullScreen from './renderMarkupModal';
 
 function renderMarkup() {
-    refs.wrapperContent.innerHTML = `<div class="container">
+  const getFromLocal = localStorage.getItem('deletedImg');
+  const parsedSettings = JSON.parse(getFromLocal);
 
-            <ul class="list-img">
-                <li class="list-item-img">
-                    <div class="img-background-1 img-background" id="1"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-2 img-background" id="2"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-3 img-background" id="3"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-4 img-background" id="4"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-5 img-background" id="5"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-6 img-background" id="6"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-7 img-background" id="7"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-8 img-background" id="8"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-9 img-background" id="9"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-10 img-background" id="10"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-11 img-background" id="11"></div>
-                    <button class="list-item-img-button">X</button>
-                </li>
-                <li class="list-item-img">
-                    <div class="img-background-12 img-background" id="12"></div>
+  const sa = () =>
+    data.map(el => {
+      return +el.id;
+    });
+  try {
+    const we = () => {
+      return parsedSettings.map(el => {
+        return +el;
+      });
+    };
 
-                    <button class="list-item-img-button">X</button>
-                </li>
-            </ul>
-        </div> `;
+    const uniqueValue = sa().filter(a => we().indexOf(a) == -1);
 
-    refs.wrapperContentCountImg.innerHTML = `<h2>Количество картинок - ${
-        refs.quantityImg().length
-    } || Время ${curentDate()}</h2>`;
-    console.log(curentDate());
+    console.log(unique);
 
-    // console.log(intervalId(refs));
-    const listImg = document.querySelector('.list-img');
-    listImg.addEventListener('click', showImgFullScreen);
+    if (parsedSettings.length !== null) {
+      const markupFromS = uniqueValue.reduce(
+        (string, el) =>
+          string +
+          `  <li class="list-item-img" id="${el}">
+           <div class="img-background-${el} img-background" id="${el}"></div>
+           <button class="list-item-img-button">X</button>
+           </li>`,
+        '',
+      );
+      refs.wrapperContent.innerHTML = `
+        <div class="container">
+         <ul class="list-img">${markupFromS}</ul>
+         <button class="return-img" type="submit">Востановить изображения</button>
+        </div>`;
+
+      refs.returnImgBtn().addEventListener('click', returnsImgOnClick);
+
+      refs.listImg().addEventListener('click', showImgFullScreen);
+      renderDateMarkup(0);
+      return;
+    }
+  } catch {}
+
+  const markup = data.reduce(
+    (string, data) =>
+      string +
+      `  
+        <li class="list-item-img" id="${data.id}">
+        <div class="img-background-${data.id} img-background" id="${data.id}"></div>
+        <button class="list-item-img-button">X</button>
+       </li>`,
+
+    '',
+  );
+  refs.wrapperContent.innerHTML = `<div class="container">
+         <ul class="list-img">${markup}</ul>
+         <button class="return-img" type="submit">Востановить изображения</button>
+        </div>`;
+
+  refs.returnImgBtn().addEventListener('click', returnsImgOnClick);
+
+  renderDateMarkup(0);
+
+  const listImg = document.querySelector('.list-img');
+  listImg.addEventListener('click', showImgFullScreen);
 }
 
 //
 
-function showImgFullScreen(e) {
-    if (e.target.classList[1] !== 'img-background') {
-        return;
-    }
-    console.log(e.target.getAttribute('id'));
-    const curentNumberImg = e.target.getAttribute('id');
+function returnsImgOnClick(e) {
+  const wrapperContentCountImg = document.querySelector('.wrapper-content-js');
 
-    // onOpenModal();
-    refs.wrapperContentModal.innerHTML = `<div class="backdrop js-backdrop">
-            <div class="modal">
-                <img src="../../task-2/images/${curentNumberImg}.jpg" alt="" />
-                <button type="button" class="button" data-action="close-modal">
-                    Закрыть
-                </button>
-            </div>
-        </div>;`;
-    modal();
+  localStorage.removeItem('deletedImg');
+  wrapperContentCountImg.innerHTML = '';
+  renderMarkup();
 }
+
 export default renderMarkup;
+
+//
+//
+//
+
+// import refs from './refs';
+// import data from './data';
+
+// import curentDate from './curentTime';
+// import showImgFullScreen from './renderMarkupModal';
+
+// function renderMarkup() {
+//   const getFromLocal = localStorage.getItem('deletedImg');
+//   const parsedSettings = JSON.parse(getFromLocal);
+
+//   try {
+//     if (parsedSettings.length !== null) {
+//       const markupFromS = parsedSettings.reduce((string, el) => {
+//         if (parsedSettings !== data) {
+//           console.log(data);
+//         }
+//         string +
+//           `  <li class="list-item-img" id="${el}">
+//            <div class="img-background-${el} img-background" id="${el}"></div>
+//            <button class="list-item-img-button">X</button>
+//            </li>`;
+//       }, '');
+//       refs.wrapperContent.innerHTML = `<div class="container">
+//          <ul class="list-img">${markupFromS}</ul>
+//         </div>`;
+//       return;
+//     }
+//   } catch {}
+
+//   const markup = data.reduce(
+//     (string, data) =>
+//       string +
+//       `
+//         <li class="list-item-img" id="${data.id}">
+//         <div class="img-background-${data.id} img-background" id="${data.id}"></div>
+//         <button class="list-item-img-button">X</button>
+//        </li>`,
+//     '',
+//   );
+//   refs.wrapperContent.innerHTML = `<div class="container">
+//          <ul class="list-img">${markup}</ul>
+//         </div>`;
+
+//   refs.wrapperContentCountImg.innerHTML = `<h2>Количество картинок - ${
+//     refs.quantityImg().length
+//   } || Время ${curentDate()}</h2>`;
+
+//   const listImg = document.querySelector('.list-img');
+//   listImg.addEventListener('click', showImgFullScreen);
+// }
+
+// //
+
+// export default renderMarkup;
