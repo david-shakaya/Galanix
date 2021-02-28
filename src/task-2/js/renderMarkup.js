@@ -1,28 +1,30 @@
 import refs from './refs';
 import data from './data';
-// import returnsImgOnClick from './returnsImgOnClick';
 
 import renderDateMarkup from './curentTime';
 import showImgFullScreen from './renderMarkupModal';
+
+// const deletedImg = [];
 
 function renderMarkup() {
   const getFromLocal = localStorage.getItem('deletedImg');
   const parsedSettings = JSON.parse(getFromLocal);
 
-  const sa = () =>
+
+  const arrFromData = () =>
     data.map(el => {
       return +el.id;
     });
   try {
-    const we = () => {
+    const arrFromStorage = () => {
       return parsedSettings.map(el => {
         return +el;
       });
     };
 
-    const uniqueValue = sa().filter(a => we().indexOf(a) == -1);
-
-    console.log(unique);
+    const uniqueValue = arrFromData().filter(
+      a => arrFromStorage().indexOf(a) == -1,
+    );
 
     if (parsedSettings.length !== null) {
       const markupFromS = uniqueValue.reduce(
@@ -37,7 +39,7 @@ function renderMarkup() {
       refs.wrapperContent.innerHTML = `
         <div class="container">
          <ul class="list-img">${markupFromS}</ul>
-         <button class="return-img" type="submit">Востановить изображения</button>
+         <button class="return-img" type="button">Востановить изображения</button>
         </div>`;
 
       refs.returnImgBtn().addEventListener('click', returnsImgOnClick);
@@ -61,7 +63,7 @@ function renderMarkup() {
   );
   refs.wrapperContent.innerHTML = `<div class="container">
          <ul class="list-img">${markup}</ul>
-         <button class="return-img" type="submit">Востановить изображения</button>
+         <button class="return-img" type="button">Востановить изображения</button>
         </div>`;
 
   refs.returnImgBtn().addEventListener('click', returnsImgOnClick);

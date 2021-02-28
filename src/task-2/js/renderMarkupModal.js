@@ -3,6 +3,7 @@ import modal from './modal.js';
 import renderDateMarkup from './curentTime';
 
 const deletedImg = [];
+let isActive = false;
 
 function showImgFullScreen(e) {
   if (e.target.classList[1] === 'img-background') {
@@ -20,6 +21,17 @@ function showImgFullScreen(e) {
   }
   if (e.target.nodeName === 'BUTTON') {
     renderDateMarkup(1);
+
+    if (!isActive) {
+      const getFromLocal = localStorage.getItem('deletedImg');
+      const parsedSettings = JSON.parse(getFromLocal);
+
+      if (parsedSettings !== null) {
+        deletedImg.push(...parsedSettings);
+      }
+      isActive = true;
+    }
+
     deletedImg.push(e.target.parentElement.getAttribute('id'));
     console.log(deletedImg);
 
