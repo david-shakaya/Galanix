@@ -1,8 +1,6 @@
-import modal from './moda.js';
 import refs from './refs';
-
-let quantityImg = 0;
-let q = `Количество изображений ${quantityImg}`;
+import modal from './moda.js';
+import curentDate from './curentTime';
 
 function renderMarkup() {
     refs.wrapperContent.innerHTML = `<div class="container">
@@ -60,9 +58,12 @@ function renderMarkup() {
             </ul>
         </div> `;
 
-    refs.wrapperContentCountImg.innerHTML = `<h2>Количество ${
+    refs.wrapperContentCountImg.innerHTML = `<h2>Количество картинок - ${
         refs.quantityImg().length
-    }</h2>`;
+    } || Время ${curentDate()}</h2>`;
+    console.log(curentDate());
+
+    // console.log(intervalId(refs));
     const listImg = document.querySelector('.list-img');
     listImg.addEventListener('click', showImgFullScreen);
 }

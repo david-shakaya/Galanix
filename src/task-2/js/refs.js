@@ -4,6 +4,7 @@ const refs = {
     wrapperContentCountImg: document.querySelector(
         '.wrapper-content-countImg-js',
     ),
+    curentTime: document.querySelector('.curent-time-js'),
     linkTask2: document.querySelector('.link-task-2'),
     quantityImg() {
         return document.querySelectorAll('.list-item-img');
