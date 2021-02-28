@@ -1,9 +1,9 @@
 const linkTask1 = document.querySelector('.link-task-1');
 const wrapperContent = document.querySelector('.wrapper-content-js');
 
-linkTask1.addEventListener('click', renderMarkup);
+linkTask1.addEventListener('click', renderMarkupTask1);
 
-function renderMarkup() {
+function renderMarkupTask1() {
     wrapperContent.innerHTML = `
 <div class="container">
     <!-- Задание 1 -->
@@ -41,3 +41,5 @@ function renderMarkup() {
 </div>
 `;
 }
+
+export default renderMarkupTask1;
