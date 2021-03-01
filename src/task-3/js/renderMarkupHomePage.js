@@ -37,7 +37,6 @@ function search(e) {
 }
 
 let numberUniver = 0;
-
 function fetchUniversities(query) {
   fetch(`http://universities.hipolabs.com/search?country=${query}`)
     .then(response => response.json())
