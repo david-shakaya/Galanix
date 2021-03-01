@@ -6,6 +6,7 @@ const refs = {
   ),
   curentTime: document.querySelector('.curent-time-js'),
   linkTask2: document.querySelector('.link-task-2'),
+  titleUniver: document.querySelector('.title-univer'),
   quantityImg() {
     return document.querySelectorAll('.list-item-img');
   },

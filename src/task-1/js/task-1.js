@@ -1,9 +1,15 @@
 const linkTask1 = document.querySelector('.link-task-1');
 const wrapperContent = document.querySelector('.wrapper-content-js');
+const wrapperContentCountImg = document.querySelector(
+  '.wrapper-content-countImg-js',
+);
+const wrapperTask3 = document.querySelector('.wrapper-task-3');
 
 linkTask1.addEventListener('click', renderMarkupTask1);
 
 function renderMarkupTask1() {
+  wrapperTask3.innerHTML = '';
+  wrapperContentCountImg.innerHTML = '';
   wrapperContent.innerHTML = `
 <div class="container">
     <!-- Задание 1 -->

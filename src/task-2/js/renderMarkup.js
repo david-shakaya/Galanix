@@ -4,12 +4,12 @@ import data from './data';
 import renderDateMarkup from './curentTime';
 import showImgFullScreen from './renderMarkupModal';
 
-// const deletedImg = [];
+const wrapperTask3 = document.querySelector('.wrapper-task-3');
 
 function renderMarkup() {
+  wrapperTask3.innerHTML = '';
   const getFromLocal = localStorage.getItem('deletedImg');
   const parsedSettings = JSON.parse(getFromLocal);
-
 
   const arrFromData = () =>
     data.map(el => {

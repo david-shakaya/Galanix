@@ -1,0 +1,14 @@
+.list-item-univer:nth-child(2n) {
+  background-color: rgb(226, 247, 255);
+  height: 50px;
+}
+.list-item-univer {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    background-color: rgb(208, 234, 245);
+    transition: 350ms;
+  }
+}
