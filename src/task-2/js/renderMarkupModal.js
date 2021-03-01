@@ -1,17 +1,19 @@
 import refs from './refs';
 import modal from './modal.js';
 import renderDateMarkup from './curentTime';
-
 const deletedImg = [];
 let isActive = false;
 
+// import '../../task-2/images/'
+//  <img src="../images/${curentNumberImg}.jpg" alt="images"
 function showImgFullScreen(e) {
   if (e.target.classList[1] === 'img-background') {
     const curentNumberImg = e.target.getAttribute('id');
 
     refs.wrapperContentModal.innerHTML = `<div class="backdrop js-backdrop">
             <div class="modal">
-                <img src="../task-2/images/${curentNumberImg}.jpg" alt="" />
+               
+                <div class="modal-img-backg-${curentNumberImg} modal-img-backg"></div>
                 <button type="button" class="button" data-action="close-modal">
                     Закрыть
                 </button>
