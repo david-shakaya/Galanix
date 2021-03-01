@@ -11,12 +11,12 @@ function showImgFullScreen(e) {
 
     refs.wrapperContentModal.innerHTML = `<div class="backdrop js-backdrop">
             <div class="modal">
-                <img src="../../task-2/images/${curentNumberImg}.jpg" alt="" />
+                <img src="../task-2/images/${curentNumberImg}.jpg" alt="" />
                 <button type="button" class="button" data-action="close-modal">
                     Закрыть
                 </button>
             </div>
-        </div>;`;
+        </div>`;
     modal();
   }
   if (e.target.nodeName === 'BUTTON') {
